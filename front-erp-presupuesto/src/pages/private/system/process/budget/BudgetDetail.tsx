@@ -279,7 +279,7 @@ export const BudgetInformation = ({ id }: { id?: string }) => {
                     className="border-gray-500 pl-1 border-[0.1em] w-24  rounded-md"
                     name="fechaCreacion"
                     onChange={handleChangePresupuestoFecha}
-                    value={budget.fechaCreacion.toISOString().split("T")[0]}
+                    value={budget.fechaCreacion}
                   />
                 </td>
               </tr>
@@ -291,7 +291,7 @@ export const BudgetInformation = ({ id }: { id?: string }) => {
                     className="border-gray-500 pl-1 border-[0.1em] w-24 rounded-md"
                     name="fechaValidez"
                     onChange={handleChangePresupuestoFecha}
-                    value={budget.fechaValidez.toISOString().split("T")[0]}
+                    value={budget.fechaValidez}
                   />
                 </td>
               </tr>

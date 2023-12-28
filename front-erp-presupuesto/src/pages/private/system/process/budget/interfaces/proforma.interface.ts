@@ -2,46 +2,46 @@ export interface Proforma {
   idN: string;
   nroOrden: number;
   cliente: string;
-  fecha: Date;
+  fecha: string;
   aprobadoPor: string;
-  fechaAprobacion: Date;
-  fechaEntrega: Date;
+  fechaAprobacion: string;
+  fechaEntrega: string;
   nroFactura: string;
   estado: string;
   observacion: string;
   tipoOrden: string;
   status: boolean;
-  creado: Date;
+  creado: string;
   creadoPor: string;
-  fechaActualizado: Date;
+  fechaActualizado: string;
   actualizadoPor: string;
-  fechaTermino: Date;
+  fechaTermino: string;
   terminadoPor: string;
   bitacora: string;
   validadoPor: string;
 }
 
-export const proformaEmpty: Proforma = {
-  idN: "",
-  nroOrden: 0,
-  cliente: "",
-  fecha: new Date(),
-  aprobadoPor: "",
-  fechaAprobacion: new Date(),
-  fechaEntrega: new Date(),
-  nroFactura: "",
-  estado: "",
-  observacion: "",
-  tipoOrden: "",
-  status: false,
-  creado: new Date(),
-  creadoPor: "",
-  fechaActualizado: new Date(),
-  actualizadoPor: "",
-  fechaTermino: new Date(),
-  terminadoPor: "",
-  bitacora: "",
-  validadoPor: "",
+const proformaEmpty: Proforma = {
+  idN: "identificador",
+  nroOrden: 123,
+  cliente: "Nombre del Cliente",
+  fecha: "2023-01-01",
+  aprobadoPor: "Aprobador",
+  fechaAprobacion: "2023-01-02",
+  fechaEntrega: "2023-01-10",
+  nroFactura: "F123",
+  estado: "Aprobado",
+  observacion: "Observaciones adicionales",
+  tipoOrden: "Tipo de Orden",
+  status: true,
+  creado: "2023-01-01",
+  creadoPor: "Creador",
+  fechaActualizado: "2023-01-03",
+  actualizadoPor: "Actualizador",
+  fechaTermino: "2023-01-15",
+  terminadoPor: "Terminador",
+  bitacora: "Registro de eventos",
+  validadoPor: "Validador",
 };
 
 function getKeys<T extends object>(obj: T): (keyof T)[] {

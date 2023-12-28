@@ -9,16 +9,11 @@ export const fetchOneBudget = async (
   status: number;
 }> => {
   try {
-    const { data, status } = await axios.get<Budget>("/data/budget-form/" + id);
+    const { data, status } = await axios.get<Budget>("/data/budget/" + id);
     const budget: Budget = data;
     return { budget, status };
   } catch (error) {
-    if (error instanceof AxiosError) {
-      if (error.response) {
-        const status = error.response.status;
-        return { budget: null, status };
-      }
-    }
+    
     //return { budget: null, status: 500 };
     return {
       budget: {
@@ -26,8 +21,8 @@ export const fetchOneBudget = async (
         estado: "En proceso",
         formaPago: "Tarjeta de crédito",
         referencia: "REF456",
-        fechaCreacion: new Date(),
-        fechaValidez: new Date(),
+        fechaCreacion: "",
+        fechaValidez: "",
         nroOrden: 123,
         precio: true,
         tipo: "Presupuesto",

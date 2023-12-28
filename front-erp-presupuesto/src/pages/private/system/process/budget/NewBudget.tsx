@@ -19,6 +19,7 @@ import {
   ItemTableServicioTerceros,
   ItemTableViaticos,
 } from "./components/ModalsServicesKeyof";
+import { fetchCreateBudget } from "./services/fetchCreateBudget";
 
 export const NewBudget = () => {
   return (
@@ -40,7 +41,10 @@ export const NewBudgetCreate = () => {
       [e.target.name]: e.target.value,
     }));
   };
-
+  const sendInfo = async (e : React.MouseEvent) => {
+    e.preventDefault()
+    const res = await fetchCreateBudget(budget);
+  }
   const handleChangePresupuestoFecha = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -204,7 +208,7 @@ export const NewBudgetCreate = () => {
                 <td>
                   <input
                     placeholder="nro"
-                    name="numero"
+                    name="idN"
                     className=" border-gray-500 pl-1 border-[0.1em] rounded-md w-24"
                     onChange={handleChangePresupuesto}
                     value={budget.idN}
@@ -268,7 +272,7 @@ export const NewBudgetCreate = () => {
                     className="border-gray-500 pl-1 border-[0.1em] w-24  rounded-md"
                     name="fechaCreacion"
                     onChange={handleChangePresupuestoFecha}
-                    value={budget.fechaCreacion.toISOString().split("T")[0]}
+                    value={budget.fechaCreacion}
                   />
                 </td>
               </tr>
@@ -280,7 +284,7 @@ export const NewBudgetCreate = () => {
                     className="border-gray-500 pl-1 border-[0.1em] w-24 rounded-md"
                     name="fechaValidez"
                     onChange={handleChangePresupuestoFecha}
-                    value={budget.fechaValidez.toISOString().split("T")[0]}
+                    value={budget.fechaValidez}
                   />
                 </td>
               </tr>
@@ -602,6 +606,7 @@ export const NewBudgetCreate = () => {
           </tbody>
         </table>
       </div>
+      <button onClick={sendInfo}> SEND</button>
     </div>
   );
 };

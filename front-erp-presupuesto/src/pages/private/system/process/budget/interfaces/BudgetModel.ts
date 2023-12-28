@@ -3,8 +3,8 @@ export interface Budget {
   estado: string;
   formaPago: string;
   referencia: string;
-  fechaCreacion: Date;
-  fechaValidez: Date;
+  fechaCreacion: string;
+  fechaValidez: string;
   nroOrden: number | null;
   precio: boolean;
   tipo: string;
@@ -91,8 +91,8 @@ export const EmptyBuget: Budget = {
     estado: "",
     formaPago: "",
     referencia: "",
-    fechaCreacion: new Date(),
-    fechaValidez: new Date(),
+    fechaCreacion: "",
+    fechaValidez: "",
     precio: true,
     tipo: "",
     cliente: "",

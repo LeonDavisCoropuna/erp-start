@@ -88,14 +88,7 @@ export const Proformas = () => {
                 <TableRow key={index}>
                   {selectedColumns.map((key) => (
                     <TableCell key={key}>
-                      {key === "fecha" ||
-                      key === "fechaAprobacion" ||
-                      key === "fechaEntrega" ||
-                      key === "creado" ||
-                      key === "fechaActualizado" ||
-                      key === "fechaTermino"
-                        ? formatFecha(proforma[key] as Date)
-                        : proforma[key]} 
+                      {proforma[key]}
                     </TableCell>
                   ))}
                   <TableCell>

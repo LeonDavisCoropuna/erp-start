@@ -7,7 +7,7 @@ export const fetchArticles = async (): Promise<{
   status: number;
 }> => {
   try {
-    const res = await axios.get<Article[]>("/api/elector/save-vote");
+    const res = await axios.get<Article[]>("/data/articles/all");
     const articles: Article[] = res.data;
     return { articles, status: res.status };
   } catch (error) {
