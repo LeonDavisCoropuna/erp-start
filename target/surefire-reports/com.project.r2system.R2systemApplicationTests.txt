@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.project.r2system.R2systemApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.305 s - in com.project.r2system.R2systemApplicationTests
